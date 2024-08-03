@@ -1,0 +1,15 @@
+<form>
+    <div class="input-group">
+        <div>
+            <label for="init_inves">Initial Investment</label>
+            <input type="number" name="Initial Investment" id="init_inves" [(ngModel)]="initialInvestment">
+            <label for="annu_inves">Annual Investment</label>
+            <input type="number" name="Annual Investment" id="annu_inves" [(ngModel)]="annualInvestment">
+            <label for="exp_result">Expected Result</label>
+            <input type="number" name="Expected Result" id="exp_result" [(ngModel)]="expectedReturn">
+            <label for="duration">Duration</label>
+            <input type="number" name="Duration" id="duration" [(ngModel)]="duration">
+            <button (click)="caluculated_data()">Calculate</button>
+        </div>
+    </div>
+</form>
