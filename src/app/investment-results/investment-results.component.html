@@ -9,12 +9,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+        <tr *ngFor="let i of result_data">
+            <td>{{i.year}}</td>
+            <td>{{i.valueEndOfYear | number:'1.2-2' }}</td>
+            <td>{{i.interest |number:'1.2-2'| currency:'EUR' }}</td>
+            <td>{{i.totalInterest |  number:'1.2-2' | currency:'EUR' }}</td>
+            <td>{{i.totalAmountInvested  |  number:'1.2-2'}}</td>
         </tr>
     </tbody>
 </table>

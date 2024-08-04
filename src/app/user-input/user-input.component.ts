@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { type DataArray } from '../Interface/data-array';
-// import { EventEmitter } from 'stream';
 
 @Component({
   selector: 'app-user-input',
@@ -11,7 +10,9 @@ import { type DataArray } from '../Interface/data-array';
   styleUrl: './user-input.component.css',
 })
 export class UserInputComponent {
-  // constructor(private emitter: EventEmitter) {}
+
+
+  @Output() emitter = new EventEmitter<DataArray[]>();
 
   protected initialInvestment: number = 0;
   protected duration: number = 0;
@@ -19,7 +20,7 @@ export class UserInputComponent {
   protected annualInvestment: number = 0;
   protected cal_data: DataArray[] = [];
 
-  protected calculateInvestmentResults() {
+  protected calculateInvestmentResults():DataArray[] {
     const annualData: DataArray[] = [];
     let investmentValue = this.initialInvestment;
 
@@ -44,8 +45,9 @@ export class UserInputComponent {
     return annualData;
   }
 
-  protected caluculated_data() {
+  protected calculated_data() {
     this.cal_data = this.calculateInvestmentResults();
-    // this.emitter.emit(this.cal_data);
+    console.log(this.cal_data);
+    this.emitter.emit(this.cal_data);
   }
 }
