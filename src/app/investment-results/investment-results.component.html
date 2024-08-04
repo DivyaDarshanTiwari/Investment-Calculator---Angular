@@ -3,7 +3,7 @@
         <tr>
             <th>Year</th>
             <th>Investment Value</th>
-            <th>Interest(Year)</th>
+            <th>Interest (Year)</th>
             <th>Total Interest</th>
             <th>Investment Capital</th>
         </tr>
@@ -11,10 +11,10 @@
     <tbody>
         <tr *ngFor="let i of result_data">
             <td>{{i.year}}</td>
-            <td>{{i.valueEndOfYear | number:'1.2-2' }}</td>
-            <td>{{i.interest |number:'1.2-2'| currency:'EUR' }}</td>
-            <td>{{i.totalInterest |  number:'1.2-2' | currency:'EUR' }}</td>
-            <td>{{i.totalAmountInvested  |  number:'1.2-2'}}</td>
+            <td>{{i.valueEndOfYear | currency:'EUR':'symbol':'1.2-2'}}</td>
+            <td>{{i.interest | currency:'EUR':'symbol':'1.2-2'}}</td>
+            <td>{{i.totalInterest | currency:'EUR':'symbol':'1.2-2'}}</td>
+            <td>{{i.totalAmountInvested | currency:'EUR':'symbol':'1.2-2'}}</td>
         </tr>
     </tbody>
 </table>
